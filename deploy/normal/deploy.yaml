@@ -1,0 +1,19 @@
+kind: Job
+apiVersion: batch/v1
+metadata:
+  name: $APP_NAME-$BUILD_NUMBER
+  namespace: $PROJECT_NAMESPACE
+spec:
+  backoffLimit: 5
+  template:
+    spec:
+      containers:
+        - name: $APP_NAME-$BUILD_NUMBER
+          image: $REGISTRY/$HARBOR_NAMESPACE/$APP_NAME:SNAPSHOT-$BUILD_NUMBER
+          resources:
+            limits:
+              nvidia.com/gpu: 1
+          imagePullPolicy: IfNotPresent
+      imagePullSecrets:
+       - name: $HARBOR_LOGIN_SECRET_NAME
+      restartPolicy: OnFailure
