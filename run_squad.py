@@ -35,11 +35,11 @@ FLAGS = flags.FLAGS
 
 ## Required parameters
 flags.DEFINE_string(
-    "bert_config_file", 'model/bert_config.json',
+    "bert_config_file", '/model/bert_config.json',
     "The config json file corresponding to the pre-trained BERT model. "
     "This specifies the model architecture.")
 
-flags.DEFINE_string("vocab_file", 'model/vocab.txt',
+flags.DEFINE_string("vocab_file", '/model/vocab.txt',
                     "The vocabulary file that the BERT model was trained on.")
 
 flags.DEFINE_string(
@@ -55,7 +55,7 @@ flags.DEFINE_string(
     "SQuAD json for predictions. E.g., dev-v1.1.json or test-v1.1.json")
 
 flags.DEFINE_string(
-    "init_checkpoint", 'model/bert_model.ckpt',
+    "init_checkpoint", '/model/bert_model.ckpt',
     "Initial checkpoint (usually from a pre-trained BERT model).")
 
 flags.DEFINE_bool(
