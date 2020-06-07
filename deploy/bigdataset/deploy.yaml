@@ -27,7 +27,7 @@ spec:
           imagePullPolicy: IfNotPresent
       imagePullSecrets:
        - name: $HARBOR_LOGIN_SECRET_NAME
-      restartPolicy: OnFailure
+      restartPolicy: Never
       volumes:
       - name: shared-dataset
         emptyDir: {}
