@@ -4,7 +4,7 @@ metadata:
   name: $APP_NAME-$BUILD_NUMBER
   namespace: $PROJECT_NAMESPACE
 spec:
-  backoffLimit: 5
+  #backoffLimit: 5
   template:
     spec:
       initContainers:
