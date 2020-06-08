@@ -47,11 +47,11 @@ flags.DEFINE_string(
     "The output directory where the model checkpoints will be written.")
 
 ## Other parameters
-flags.DEFINE_string("train_file", 'dataset/train.json',
+flags.DEFINE_string("train_file", 'dataset/origin/train.json',
                     "SQuAD json for training. E.g., train-v1.1.json")
 
 flags.DEFINE_string(
-    "predict_file", 'dataset/test.json',
+    "predict_file", 'dataset/origin/test.json',
     "SQuAD json for predictions. E.g., dev-v1.1.json or test-v1.1.json")
 
 flags.DEFINE_string(
