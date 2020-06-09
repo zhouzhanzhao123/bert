@@ -47,11 +47,11 @@ flags.DEFINE_string(
     "The output directory where the model checkpoints will be written.")
 
 ## Other parameters
-flags.DEFINE_string("train_file", 'dataset/origin/train.json',
+flags.DEFINE_string("train_file", 'dataset/simp_decomp/train.json',
                     "SQuAD json for training. E.g., train-v1.1.json")
 
 flags.DEFINE_string(
-    "predict_file", 'dataset/origin/test.json',
+    "predict_file", 'dataset/simp_decomp/test.json',
     "SQuAD json for predictions. E.g., dev-v1.1.json or test-v1.1.json")
 
 flags.DEFINE_string(
@@ -88,7 +88,7 @@ flags.DEFINE_integer("train_batch_size", 8, "Total batch size for training.")
 flags.DEFINE_integer("predict_batch_size", 8,
                      "Total batch size for predictions.")
 
-flags.DEFINE_float("learning_rate", 3e-5, "The initial learning rate for Adam.")
+flags.DEFINE_float("learning_rate", 1e-5, "The initial learning rate for Adam.")
 
 flags.DEFINE_float("num_train_epochs", 3.0,
                    "Total number of training epochs to perform.")
