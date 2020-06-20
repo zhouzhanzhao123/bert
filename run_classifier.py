@@ -360,7 +360,7 @@ class ColaProcessor(DataProcessor):
     examples = []
     for (i, line) in enumerate(lines):
       # Only the test set has a header
-      if set_type == "test" and i == 0:
+      if i == 0:
         continue
       guid = "%s-%s" % (set_type, i)
       if set_type == "test":
