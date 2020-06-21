@@ -64,7 +64,7 @@ flags.DEFINE_bool(
     "models and False for cased models.")
 
 flags.DEFINE_integer(
-    "max_seq_length", 128,#last 2 model use the length of 512
+    "max_seq_length", 100,#last 2 model use the length of 512
     "The maximum total input sequence length after WordPiece tokenization. "
     "Sequences longer than this will be truncated, and sequences shorter "
     "than this will be padded.")
@@ -110,7 +110,7 @@ flags.DEFINE_integer(
     "nbest_predictions.json output file.")
 
 flags.DEFINE_integer(
-    "max_answer_length", 80,#last 2 model use the length of 80
+    "max_answer_length", 60,#last 2 model use the length of 80
     "The maximum length of an answer that can be generated. This is needed "
     "because the start and end predictions are not conditioned on one another.")
 
