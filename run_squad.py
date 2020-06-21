@@ -47,11 +47,11 @@ flags.DEFINE_string(
     "The output directory where the model checkpoints will be written.")
 
 ## Other parameters
-flags.DEFINE_string("train_file", 'dataset/origin/train.json',
+flags.DEFINE_string("train_file", 'sub_question/train.json',
                     "SQuAD json for training. E.g., train-v1.1.json")
 
 flags.DEFINE_string(
-    "predict_file", 'dataset/origin/test.json',
+    "predict_file", 'sub_question/test.json',
     "SQuAD json for predictions. E.g., dev-v1.1.json or test-v1.1.json")
 
 flags.DEFINE_string(
@@ -64,7 +64,7 @@ flags.DEFINE_bool(
     "models and False for cased models.")
 
 flags.DEFINE_integer(
-    "max_seq_length", 512,
+    "max_seq_length", 128,#last 2 model use the length of 512
     "The maximum total input sequence length after WordPiece tokenization. "
     "Sequences longer than this will be truncated, and sequences shorter "
     "than this will be padded.")
@@ -75,7 +75,7 @@ flags.DEFINE_integer(
     "take between chunks.")
 
 flags.DEFINE_integer(
-    "max_query_length", 80,
+    "max_query_length", 18,#last 2 model use the length of 80
     "The maximum number of tokens for the question. Questions longer than "
     "this will be truncated to this length.")
 
@@ -83,12 +83,12 @@ flags.DEFINE_bool("do_train", True, "Whether to run training.")
 
 flags.DEFINE_bool("do_predict", True, "Whether to run eval on the dev set.")
 
-flags.DEFINE_integer("train_batch_size", 8, "Total batch size for training.")
+flags.DEFINE_integer("train_batch_size", 32, "Total batch size for training.")#last 2 model use the length of 8
 
 flags.DEFINE_integer("predict_batch_size", 8,
                      "Total batch size for predictions.")
 
-flags.DEFINE_float("learning_rate", 5e-5, "The initial learning rate for Adam.")
+flags.DEFINE_float("learning_rate", 3e-5, "The initial learning rate for Adam.")
 
 flags.DEFINE_float("num_train_epochs", 3.0,
                    "Total number of training epochs to perform.")
@@ -110,7 +110,7 @@ flags.DEFINE_integer(
     "nbest_predictions.json output file.")
 
 flags.DEFINE_integer(
-    "max_answer_length", 80,
+    "max_answer_length", 80,#last 2 model use the length of 80
     "The maximum length of an answer that can be generated. This is needed "
     "because the start and end predictions are not conditioned on one another.")
 

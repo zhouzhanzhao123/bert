@@ -11,5 +11,5 @@ WORKDIR /home/bert
 #RUN pip install -r requirements.txt
 
 # step5 设置容器启动时的运行命令，这里我们直接运行python程序
-#ENTRYPOINT ["python", "/home/bert/run_squad.py"]
-ENTRYPOINT ["python", "/home/bert/run_classifier.py"]
+ENTRYPOINT ["python", "/home/bert/run_squad.py"]
+#ENTRYPOINT ["python", "/home/bert/run_classifier.py"]
