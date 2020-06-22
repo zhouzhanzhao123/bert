@@ -64,7 +64,7 @@ flags.DEFINE_bool(
     "models and False for cased models.")
 
 flags.DEFINE_integer(
-    "max_seq_length", 100,#last 2 model use the length of 512
+    "max_seq_length", 256,#last 2 model use the length of 512
     "The maximum total input sequence length after WordPiece tokenization. "
     "Sequences longer than this will be truncated, and sequences shorter "
     "than this will be padded.")
@@ -75,7 +75,7 @@ flags.DEFINE_integer(
     "take between chunks.")
 
 flags.DEFINE_integer(
-    "max_query_length", 12,#last 2 model use the length of 80
+    "max_query_length", 200,#last 2 model use the length of 80
     "The maximum number of tokens for the question. Questions longer than "
     "this will be truncated to this length.")
 
@@ -83,7 +83,7 @@ flags.DEFINE_bool("do_train", True, "Whether to run training.")
 
 flags.DEFINE_bool("do_predict", True, "Whether to run eval on the dev set.")
 
-flags.DEFINE_integer("train_batch_size", 32, "Total batch size for training.")#last 2 model use the length of 8
+flags.DEFINE_integer("train_batch_size", 16, "Total batch size for training.")#last 2 model use the length of 8
 
 flags.DEFINE_integer("predict_batch_size", 8,
                      "Total batch size for predictions.")
