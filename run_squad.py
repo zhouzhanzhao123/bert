@@ -75,7 +75,7 @@ flags.DEFINE_integer(
     "take between chunks.")
 
 flags.DEFINE_integer(
-    "max_query_length", 18,#last 2 model use the length of 80
+    "max_query_length", 12,#last 2 model use the length of 80
     "The maximum number of tokens for the question. Questions longer than "
     "this will be truncated to this length.")
 
