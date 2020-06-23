@@ -47,7 +47,7 @@ flags.DEFINE_string(
     "The output directory where the model checkpoints will be written.")
 
 ## Other parameters
-flags.DEFINE_string("train_file", 'dataset/decomp/train_single.json',
+flags.DEFINE_string("train_file", 'dataset/decomp/train_first.json',
                     "SQuAD json for training. E.g., train-v1.1.json")
 
 flags.DEFINE_string(
@@ -110,7 +110,7 @@ flags.DEFINE_integer(
     "nbest_predictions.json output file.")
 
 flags.DEFINE_integer(
-    "max_answer_length", 80,#last 2 model use the length of 80
+    "max_answer_length", 20,#last 2 model use the length of 80
     "The maximum length of an answer that can be generated. This is needed "
     "because the start and end predictions are not conditioned on one another.")
 
