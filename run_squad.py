@@ -800,8 +800,8 @@ def write_predictions(all_examples, all_features, all_results, n_best_size,
           if end_index < start_index:
             continue
           length = end_index - start_index + 1
-          #if length > max_answer_length:
-            #continue
+          if length > max_answer_length:
+            continue
           prelim_predictions.append(
               _PrelimPrediction(
                   feature_index=feature_index,
