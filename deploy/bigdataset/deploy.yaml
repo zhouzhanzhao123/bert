@@ -11,7 +11,7 @@ spec:
       - name: prepare-dataset
         # hub.data.wust.edu.cn:30880/ygtao/mnist-dataset:v1.0
         image: $DATASET_IMAGE
-        command: ['sh', '-c', 'mv /origin/* /tempdir;echo the init container is used to prepare dataset for your code!']
+        command: ['sh', '-c', 'mv /origin_data/* /tempdir;echo the init container is used to prepare dataset for your code!']
         volumeMounts:
         - name: shared-dataset
           mountPath: /tempdir
@@ -20,7 +20,7 @@ spec:
           image: $REGISTRY/$HARBOR_NAMESPACE/$APP_NAME:SNAPSHOT-$BUILD_NUMBER
           volumeMounts:
           - name: shared-dataset
-            mountPath: /origin
+            mountPath: /origin_data
           resources:
             limits:
               nvidia.com/gpu: 1
