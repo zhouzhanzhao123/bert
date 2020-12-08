@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 kind: Job
 apiVersion: batch/v1
 metadata:
@@ -31,38 +30,4 @@ spec:
       restartPolicy: Never
       volumes:
       - name: shared-dataset
-=======
-kind: Job
-apiVersion: batch/v1
-metadata:
-  name: $APP_NAME-$BUILD_NUMBER
-  namespace: $PROJECT_NAMESPACE
-spec:
-  #backoffLimit: 5
-  template:
-    spec:
-      initContainers:
-      - name: prepare-dataset
-        # hub.data.wust.edu.cn:30880/ygtao/mnist-dataset:v1.0
-        image: $DATASET_IMAGE
-        command: ['sh', '-c', 'mv /model/* /tempdir;echo the init container is used to prepare dataset for your code!']
-        volumeMounts:
-        - name: shared-dataset
-          mountPath: /tempdir
-      containers:
-        - name: $APP_NAME-$BUILD_NUMBER
-          image: $REGISTRY/$HARBOR_NAMESPACE/$APP_NAME:SNAPSHOT-$BUILD_NUMBER
-          volumeMounts:
-          - name: shared-dataset
-            mountPath: /model
-          resources:
-            limits:
-              nvidia.com/gpu: 1
-          imagePullPolicy: IfNotPresent
-      imagePullSecrets:
-       - name: $HARBOR_LOGIN_SECRET_NAME
-      restartPolicy: Never
-      volumes:
-      - name: shared-dataset
->>>>>>> 5559dbc8e7735610fb309146cdfdbde1204da83f
         emptyDir: {}
