@@ -35,11 +35,11 @@ FLAGS = flags.FLAGS
 
 ## Required parameters
 flags.DEFINE_string(
-    "bert_config_file", '/model/bert_config.json',
+    "bert_config_file", 'uncased_L-12_H-768_A-12/bert_config.json',
     "The config json file corresponding to the pre-trained BERT model. "
     "This specifies the model architecture.")
 
-flags.DEFINE_string("vocab_file", '/model/vocab.txt',
+flags.DEFINE_string("vocab_file", 'uncased_L-12_H-768_A-12/vocab.txt',
                     "The vocabulary file that the BERT model was trained on.")
 
 flags.DEFINE_string(
@@ -47,15 +47,15 @@ flags.DEFINE_string(
     "The output directory where the model checkpoints will be written.")
 
 ## Other parameters
-flags.DEFINE_string("train_file", 'dataset/decomp/train_first.json',
+flags.DEFINE_string("train_file", '/origin/hotpot_train.json',
                     "SQuAD json for training. E.g., train-v1.1.json")
 
 flags.DEFINE_string(
-    "predict_file", 'dataset/decomp/reason_test_first.json',
+    "predict_file", '/origin/hotpot_test.json',
     "SQuAD json for predictions. E.g., dev-v1.1.json or test-v1.1.json")
 
 flags.DEFINE_string(
-    "init_checkpoint", '/model/bert_model.ckpt',
+    "init_checkpoint", 'uncased_L-12_H-768_A-12/bert_model.ckpt',
     "Initial checkpoint (usually from a pre-trained BERT model).")
 
 flags.DEFINE_bool(
@@ -75,7 +75,7 @@ flags.DEFINE_integer(
     "take between chunks.")
 
 flags.DEFINE_integer(
-    "max_query_length", 80,#last 2 model use the length of 80
+    "max_query_length", 70,#last 2 model use the length of 80
     "The maximum number of tokens for the question. Questions longer than "
     "this will be truncated to this length.")
 
@@ -90,7 +90,7 @@ flags.DEFINE_integer("predict_batch_size", 8,
 
 flags.DEFINE_float("learning_rate", 3e-5, "The initial learning rate for Adam.")
 
-flags.DEFINE_float("num_train_epochs", 3.0,
+flags.DEFINE_float("num_train_epochs", 2.0,
                    "Total number of training epochs to perform.")
 
 flags.DEFINE_float(
